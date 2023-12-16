@@ -8,11 +8,18 @@ def average_even_number():
             list_number.append(number_input)
         counter += 1
 
-    sort_number = list_number.sort()
-    set_number = " ".join(map(str, sort_number))
-    
+    list_number.sort()
+    set_number = " ".join(map(str, list_number))
+    # print(list_number)
     print(f"Unique numbers is {set_number}")
-    print(f"Average number of even position in list is {float(sum(list_number) / len(list_number)):.2f}")
+    number_even_position = 0
+    number_len_even = 0
+    for i in range(0, len(list_number), +2 ): 
+        number_even_position += int(list_number[i]) 
+        number_len_even += 1
+    # print(number_even_position)
+    avg_position_even =  float(number_even_position / number_len_even)
+    print(f"Average number of even position in list is {avg_position_even:.2f}")
 
 if __name__ == '__main__':
     average_even_number()
